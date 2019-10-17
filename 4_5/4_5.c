@@ -41,6 +41,7 @@ int main(int argc, char*argv[]) {
 	if (err != 0) {
 		perror("Thread cancel error");
 	}
+	
 	printf("Thread %d is canceled\n", thrid);
 	err = pthread_join(thrid, &stat); 
 	if (err != 0) {
