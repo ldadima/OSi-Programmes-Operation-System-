@@ -90,7 +90,9 @@ int main() {
 
     while (exit_flag) {
         char buf[81];
-        if (gets(buf) != NULL) {
+        if (fgets(buf, 81, stdin) != NULL) {
+            int end=strcspn(buf, "\n");
+            buf[end] = '\0';
             if (strlen(buf) > 0) {
                 str_list *cur = (str_list *) malloc(sizeof(str_list));
                 err = pthread_mutex_init(&cur->mutex, NULL);
